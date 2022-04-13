@@ -10,5 +10,5 @@ if(isset($_POST['submit'])) {
 	$txt = "Your message and information is received successfully".$name.".\n\n".$message;
         
         mail($mailto, $subject, $txt, $headers);
-        header("Location: https://www.noyobdunyo.uz/contacts.html?mailsend");
+        header("Location: https://projectprogress.uz/contacts.html?mailsend");
 }
