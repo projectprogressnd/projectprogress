@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://projectprogress.uz/</title>
+  <link>https://projectprogress.uz/</link>
+
+<item>
+     <link>https://projectprogress.uz/</link>
+     <title>Project Progress компанияси</title>
+     <description>Project Progress компанияси</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/index.html</link>
+     <title>Project Progress компанияси</title>
+     <description>Project Progress компанияси</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/about.html</link>
+     <title>"Project Progress" ҳақида</title>
+     <description>"Project Progress" ҳақида</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/services.html</link>
+     <title>Хизматлар тури</title>
+     <description>Хизматлар тури</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/contacts.html</link>
+     <title>Боғланиш</title>
+     <description>Боғланиш</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/websait.html</link>
+     <title>Вебсайт яратиш</title>
+     <description>Вебсайт яратиш</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/paraphrase-translate.html</link>
+     <title>Paraphrase-Мақолани ўзгача ифодаламоқ</title>
+     <description>Paraphrase-Мақолани ўзгача ифодаламоқ</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/logo-design.html</link>
+     <title>Лого-Дизайн</title>
+     <description>Лого-Дизайн</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/internet-marketing.html</link>
+     <title>Интернет маркетинг</title>
+     <description>Интернет маркетинг</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://projectprogress.uz/public-relations.html</link>
+     <title>Public Relations(Пиар)-Оммага танитиш</title>
+     <description>Public Relations(Пиар)-Оммага танитиш</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
