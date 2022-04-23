@@ -51,10 +51,9 @@
 }
 .navbar-nav.mr-auto .nav-item .nav-link {
     color: #FFDE33;
-    font-family: merriweather;
     font-style: normal;
-    font-weight: 400;
-    font-size: 14pt;
+    font-weight: 600;
+    font-size: 15pt;
 }
 .row .col-lg-5 .btn.btn-primary {
     color: #FFDE33;
