@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Project Progress ҳизматлари</title>
+  <link>https://projectprogress.uz</link>
+  <description>Rss feed from Project Progress</description>
+  <copyright>Copyright © 2022 Project Progress. Барча ҳуқуқлар ҳимояланган.</copyright>
+  <category>Services</category>
+  <item>
+     <title>Public Relations(Пиар) &apos;- Оммага Танитиш</title>
+     <link>https://projectprogress.uz/public-relations.html</link>
+	 <guid>https://projectprogress.uz/public-relations.html</guid>
+     <description><![CDATA[Умуман олганда бу маркетинг турларидан бири бўлиб, компания маҳсулотига талабни, омма фикрини рағбатлантириш орқали эришиш ва компанияга нисбатан оммада яхши мулоҳаза яратиш.]]></description>
+	 <pubDate>Wed, 08 Sep 2021 20:00:12 +0500</pubDate>
+	 <author>office@projectprogress.uz (Ikramov Nodir)</author>
+	 <category>Services</category>
+	 <enclosure url="https://projectprogress.uz/images/5.jpg" type="image/jpeg" length="754605"/>
+  </item>
+	<item>
+     <title>Интернет маркетинг</title>
+     <link>https://projectprogress.uz/internet-marketing.html</link>
+	 <guid>https://projectprogress.uz/internet-marketing.html</guid>
+     <description><![CDATA["SMM"(Social Media Marketing), Реклама (Advertising), "SEO"(Search Engine Optimization), Оммага танитиш (PR), "Content marketing"-Контент маркетинг, Геолокация.]]></description>
+	 <pubDate>Wed, 08 Sep 2021 20:00:12 +0500</pubDate>
+	 <author>office@projectprogress.uz (Ikramov Nodir)</author>
+	 <category>Services</category>
+	 <enclosure url="https://projectprogress.uz/images/3.jpg" type="image/jpeg" length="754605"/>
+  </item>
+	<item>
+     <title>Вебсайт аратиш-web sayt yaratish</title>
+     <link>https://projectprogress.uz/websait.html</link>
+	 <guid>https://projectprogress.uz/websait.html</guid>
+     <description><![CDATA[Сайт-визитка, Корпоратив вебсайт, Блог-вебсайт, Шахсий вебсайт, Нотижорат сайт, Янгиликлар сайти.]]></description>
+	 <pubDate>Wed, 08 Sep 2021 20:00:12 +0500</pubDate>
+	 <author>office@projectprogress.uz (Ikramov Nodir)</author>
+	 <category>Services</category>
+	 <enclosure url="https://projectprogress.uz/images/4.png" type="image/jpeg" length="754605"/>
+  </item>
+	<item>
+     <title>Лого Дизайн-LOGO design</title>
+     <link>https://projectprogress.uz/logo-design.html</link>
+	 <guid>https://projectprogress.uz/logo-design.html</guid>
+     <description><![CDATA[“Лого-Дизайн”хизмати-бу ташкилот ёки компания логотипини, яъни брендини яратиш...]]></description>
+	 <pubDate>Wed, 08 Sep 2021 20:00:12 +0500</pubDate>
+	 <author>office@projectprogress.uz (Ikramov Nodir)</author>
+	 <category>Services</category>
+	 <enclosure url="https://projectprogress.uz/images/logo1.png" type="image/jpeg" length="754605"/>
+  </item>
+</channel>
+</rss>
