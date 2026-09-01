@@ -25,22 +25,33 @@
 	  <meta property="og:site_name" content="Project Progress" />
 	  <meta property="og:image" content="https://projectprogress.uz/images/3.jpg" />
 	<!--SEO end-->
-  <style>
-  /* hiding Google Translate */
-  .goog-te-banner-frame.skiptranslate {
+<style>
+  /* 1. Скрываем баннер Google Translate и фреймы */
+  .goog-te-banner-frame,
+  .goog-te-banner-frame.skiptranslate,
+  iframe.goog-te-banner-frame {
     display: none !important;
-  }
-  
-  /* moving page */
-  body {
-    top: 0px !important;
-    position: static !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
   }
 
-  /* hiding Google text */
+  /* 2. Запрещаем сдвигать body вниз */
+  body {
+    top: 0 !important;
+    position: static !important;
+    min-height: 100% !important;
+  }
+
+  /* 3. Скрываем всплывающие желтые подсказки при наведении на текст */
   .goog-text-highlight {
     background-color: transparent !important;
     box-shadow: none !important;
+  }
+
+  /* 4. Скрываем иконку Google, если она появится */
+  #goog-gt-tt, .goog-te-balloon-frame {
+    display: none !important;
   }
 </style>
 	</head>
