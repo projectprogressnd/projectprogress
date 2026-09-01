@@ -81,9 +81,9 @@
 </div>
         <!-- Кнопки выбора языка -->
 <div class="lang-buttons">
-  <button onclick="translatePage('ru')">RU</button>
-  <button onclick="translatePage('en')">EN</button>
-  <button onclick="translatePage('uz')">UZ</button>
+  <button class="lang-btn" data-lang="ru">RU</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="uz">UZ</button>
 </div></nav>
 		  <br>
 		  <br>
@@ -222,10 +222,11 @@
 	<script src="js/popper.min.js"></script> 
 	<script src="js/bootstrap-4.4.1.js"></script>
 <!--start translate code -->
-
+<!-- Скрытый контейнер Google -->
 <div id="google_translate_element" style="display:none;"></div>
 
 <script type="text/javascript">
+// Инициализация Google Translate
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'uz',
@@ -234,30 +235,42 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
-// Улучшенная функция перевода
-function translatePage(langCode) {
-  // Ищем выпадающий список Google
-  var select = document.querySelector('.goog-te-combo');
+// Универсальный обработчик для кнопок
+document.addEventListener('DOMContentLoaded', function() {
+  // Навешиваем клики на все кнопки языков
+  var buttons = document.querySelectorAll('.lang-btn');
   
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var lang = this.getAttribute('data-lang');
+      doTranslate(lang);
+    });
+  });
+});
+
+// Функция запуска перевода
+function doTranslate(langCode) {
+  var select = document.querySelector('.goog-te-combo');
   if (select) {
     select.value = langCode;
     select.dispatchEvent(new Event('change'));
 
-    // Убираем сдвиг и баннер
+    // Блокируем сдвиг верстки и всплывающий баннер
     setTimeout(function() {
       document.body.style.top = "0px";
       document.body.style.position = "static";
+      
       var frame = document.querySelector('.goog-te-banner-frame');
       if (frame) {
         frame.style.display = 'none';
+        frame.style.visibility = 'hidden';
       }
     }, 300);
   } else {
-    // Если Google ещё не успел загрузиться, пробуем повторить через 0.5 сек
-    console.log("Google Translate еще не загрузился, повторяем попытку...");
+    // Если Google не успел прогрузиться — ждем и повторяем
     setTimeout(function() {
-      translatePage(langCode);
-    }, 500);
+      doTranslate(langCode);
+    }, 400);
   }
 }
 </script>
