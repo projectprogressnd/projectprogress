@@ -221,7 +221,8 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/popper.min.js"></script> 
 	<script src="js/bootstrap-4.4.1.js"></script>
-<!-- translate code -->
+<!--start translate code -->
+
 <div id="google_translate_element" style="display:none;"></div>
 
 <script type="text/javascript">
@@ -233,27 +234,36 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
+// Улучшенная функция перевода
 function translatePage(langCode) {
+  // Ищем выпадающий список Google
   var select = document.querySelector('.goog-te-combo');
+  
   if (select) {
     select.value = langCode;
     select.dispatchEvent(new Event('change'));
 
-    // Принудительно убираем баннер и сдвиг верстки
+    // Убираем сдвиг и баннер
     setTimeout(function() {
       document.body.style.top = "0px";
       document.body.style.position = "static";
-      
       var frame = document.querySelector('.goog-te-banner-frame');
       if (frame) {
         frame.style.display = 'none';
-        frame.style.visibility = 'hidden';
       }
+    }, 300);
+  } else {
+    // Если Google ещё не успел загрузиться, пробуем повторить через 0.5 сек
+    console.log("Google Translate еще не загрузился, повторяем попытку...");
+    setTimeout(function() {
+      translatePage(langCode);
     }, 500);
   }
 }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<!-- for translation -->
+<!-- end translation -->
 </body>
 </html>
 	</body>
