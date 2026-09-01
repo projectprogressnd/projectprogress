@@ -26,32 +26,22 @@
 	  <meta property="og:image" content="https://projectprogress.uz/images/3.jpg" />
 	<!--SEO end-->
 <style>
-  /* 1. Скрываем баннер Google Translate и фреймы */
-  .goog-te-banner-frame,
+  /* Hiding Google Translate */
   .goog-te-banner-frame.skiptranslate,
-  iframe.goog-te-banner-frame {
+  .goog-te-gadget {
     display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
   }
-
-  /* 2. Запрещаем сдвигать body вниз */
+  
+  /* stop page move */
   body {
-    top: 0 !important;
+    top: 0px !important;
     position: static !important;
-    min-height: 100% !important;
   }
 
-  /* 3. Скрываем всплывающие желтые подсказки при наведении на текст */
+  /* txt ... */
   .goog-text-highlight {
     background-color: transparent !important;
     box-shadow: none !important;
-  }
-
-  /* 4. Скрываем иконку Google, если она появится */
-  #goog-gt-tt, .goog-te-balloon-frame {
-    display: none !important;
   }
 </style>
 	</head>
@@ -81,9 +71,9 @@
 </div>
         <!-- Кнопки выбора языка -->
 <div class="lang-buttons">
-  <button class="lang-btn" data-lang="ru">RU</button>
-  <button class="lang-btn" data-lang="en">EN</button>
-  <button class="lang-btn" data-lang="uz">UZ</button>
+  <button onclick="translatePage('ru')">RU</button>
+  <button onclick="translatePage('en')">EN</button>
+  <button onclick="translatePage('uz')">UZ</button>
 </div></nav>
 		  <br>
 		  <br>
@@ -222,11 +212,10 @@
 	<script src="js/popper.min.js"></script> 
 	<script src="js/bootstrap-4.4.1.js"></script>
 <!--start translate code -->
-<!-- Скрытый контейнер Google -->
+
 <div id="google_translate_element" style="display:none;"></div>
 
 <script type="text/javascript">
-// Инициализация Google Translate
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'uz',
@@ -235,47 +224,15 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 
-// Универсальный обработчик для кнопок
-document.addEventListener('DOMContentLoaded', function() {
-  // Навешиваем клики на все кнопки языков
-  var buttons = document.querySelectorAll('.lang-btn');
-  
-  buttons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var lang = this.getAttribute('data-lang');
-      doTranslate(lang);
-    });
-  });
-});
-
-// Функция запуска перевода
-function doTranslate(langCode) {
+function translatePage(langCode) {
   var select = document.querySelector('.goog-te-combo');
   if (select) {
     select.value = langCode;
     select.dispatchEvent(new Event('change'));
-
-    // Блокируем сдвиг верстки и всплывающий баннер
-    setTimeout(function() {
-      document.body.style.top = "0px";
-      document.body.style.position = "static";
-      
-      var frame = document.querySelector('.goog-te-banner-frame');
-      if (frame) {
-        frame.style.display = 'none';
-        frame.style.visibility = 'hidden';
-      }
-    }, 300);
-  } else {
-    // Если Google не успел прогрузиться — ждем и повторяем
-    setTimeout(function() {
-      doTranslate(langCode);
-    }, 400);
   }
 }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 <!-- end translation -->
 </body>
 </html>
