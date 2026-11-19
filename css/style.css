@@ -561,3 +561,11 @@ footer {
     padding: 24px;
   }
 }
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 6px;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.25));
+}
