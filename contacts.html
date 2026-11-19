@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uz-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontaktlar — Project Progress</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-cube"></span>
+        <span>Project Progress</span>
+      </a>
+      <nav aria-label="Asosiy menyu">
+        <a href="index.html">Bosh sahifa</a>
+        <a href="about.html">Biz haqimizda</a>
+        <a href="services.html">Xizmatlar</a>
+        <a class="active" href="contacts.html">Kontaktlar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="tech-pill">
+          <span class="pulse-dot"></span>
+          <span>TOSHKENT, O‘ZBEKISTON • B2B ALOQA</span>
+        </div>
+        <h1>
+          <span class="grad-text">Biz bilan bog‘laning</span>
+        </h1>
+        <p class="lead">
+          Hisoblash quvvati ijarasi, muddatlar va so‘mdagi hisob-kitob bo‘yicha so‘rov yuboring.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <article class="card">
+            <span class="card-code">REKVIZITLAR &amp; ALOQA</span>
+            <h3>«Project Progress» MChJ</h3>
+            <p style="margin-top: 12px;"><strong>Manzil:</strong> Mirzo Ulug‘bek tumani, Toshkent shahri, O‘zbekiston</p>
+            <p style="margin-top: 10px;"><strong>Veb-sayt:</strong> https://projectprogress.uz</p>
+            <p style="margin-top: 10px;"><strong>To‘lov shakli:</strong> Shartnoma va hisob-faktura asosida (so‘mda)</p>
+            <p style="margin-top: 10px;"><strong>Aloqa ma’lumotlari:</strong> Dreamweaver’da o‘zingizning telefon, e-mail yoki Telegram manzilingizni kiriting.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-code">QUVVAT SO‘ROVI</span>
+            <h3>Vazifa bo‘yicha ma’lumot qoldiring</h3>
+            <p style="margin-top: 8px; margin-bottom: 16px;">
+              Kerakli quvvat, ma’lumotlar hajmi va taxminiy muddatni yozing.
+            </p>
+
+            <form id="calcForm" style="display: grid; gap: 12px;">
+              <input
+                type="text"
+                name="company"
+                placeholder="Tashkilot nomi yoki ismingiz"
+                required
+                style="padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(34, 211, 238, 0.28); background: rgba(3, 6, 14, 0.85); color: #f1f5f9;"
+              />
+              <input
+                type="text"
+                name="contact"
+                placeholder="Telefon raqami yoki e-mail"
+                required
+                style="padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(34, 211, 238, 0.28); background: rgba(3, 6, 14, 0.85); color: #f1f5f9;"
+              />
+              <textarea
+                name="task"
+                rows="4"
+                placeholder="Vazifa tavsifi, taxminiy quvvat/hajm va muddat"
+                required
+                style="padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(34, 211, 238, 0.28); background: rgba(3, 6, 14, 0.85); color: #f1f5f9; resize: vertical;"
+              ></textarea>
+              <button class="btn btn-primary" type="submit">So‘rovni rasmiylashtirish</button>
+              <p id="formStatus" style="font-size: 0.9rem; color: #22d3ee;"></p>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <span>© 2026 «Project Progress» MChJ. Barcha huquqlar himoyalangan.</span>
+      <span>projectprogress.uz</span>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("calcForm");
+    const status = document.getElementById("formStatus");
+    if (form && status) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        status.textContent = "Ma’lumotlar tekshirildi. Bog‘lanish uchun ko‘rsatilgan kontaktlardan foydalaning.";
+      });
+    }
+  </script>
+</body>
+</html>
