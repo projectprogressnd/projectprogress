@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Progress — Kelajak avlod hisoblash va bulutli quvvatlari</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 	<link rel="shortcut icon" href="images/favicon.ico"/>
 </head>
@@ -181,7 +182,49 @@
         </div>
       </div>
     </section>
+<!-- start by regions  -->
+	  <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Geografiya va hududlar</span>
+          <h2 class="section-title">Mintaqalar va server joylashuvi bo‘yicha tanlov</h2>
+          <p class="section-sub">
+            Vazifa talabi, kechikish (latency) va ma’lumotlar bilan ishlash shartlariga mos hududni
+            tanlang — aniq konfiguratsiya va shartnoma shartlari buyurtma asosida kelishiladi.
+          </p>
+        </div>
 
+        <div class="geo-matrix">
+          <div class="region-tabs" role="tablist" aria-label="Mintaqalar">
+            <button class="region-tab active" type="button" data-region="europe">
+              <span>Yevropa</span>
+              <span>›</span>
+            </button>
+            <button class="region-tab" type="button" data-region="asia">
+              <span>Osiyo</span>
+              <span>›</span>
+            </button>
+            <button class="region-tab" type="button" data-region="namerica">
+              <span>Shimoliy Amerika</span>
+              <span>›</span>
+            </button>
+            <button class="region-tab" type="button" data-region="samerica">
+              <span>Janubiy Amerika</span>
+              <span>›</span>
+            </button>
+          </div>
+
+          <div class="region-board">
+            <div class="region-board-head">
+              <h3 id="regionTitle">Yevropa (Europe)</h3>
+              <span class="region-status">● Tizimlar faol holatda</span>
+            </div>
+            <div class="locations-grid" id="locationsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- End by regions -->
     <section>
       <div class="container">
         <div class="cta-banner">
@@ -255,6 +298,83 @@
         pRamBar.style.width = data.ram + "%";
       });
     });
+	  // --- regions script ---
+	  const regionsData = {
+      europe: {
+        title: "Yevropa (Europe)",
+        items: [
+          { code: "nl", city: "Amsterdam", country: "Niderlandiya • VPS / Compute" },
+          { code: "de", city: "Frankfurt", country: "Germaniya • VPS / Compute" },
+          { code: "de", city: "Falkenstein", country: "Germaniya • VPS / Compute" },
+          { code: "tr", city: "Istanbul", country: "Turkiya • VPS / Compute" },
+          { code: "gb", city: "London", country: "Buyuk Britaniya • VPS / Compute" },
+          { code: "fr", city: "Parij", country: "Fransiya • VPS / Compute" },
+          { code: "it", city: "Milan", country: "Italiya • VPS / Compute" },
+          { code: "se", city: "Stokgolm", country: "Shvetsiya • VPS / Compute" },
+          { code: "pl", city: "Varshava", country: "Polsha • VPS / Compute" }
+        ]
+      },
+      asia: {
+        title: "Osiyo (Asia)",
+        items: [
+          { code: "sg", city: "Singapur", country: "Singapur • Cloud Node" },
+          { code: "jp", city: "Tokio", country: "Yaponiya • Cloud Node" },
+          { code: "kr", city: "Seul", country: "Janubiy Koreya • Cloud Node" },
+          { code: "in", city: "Mumbay", country: "Hindiston • Cloud Node" },
+          { code: "ae", city: "Dubay", country: "BAA • Cloud Node" }
+        ]
+      },
+      namerica: {
+        title: "Shimoliy Amerika (North America)",
+        items: [
+          { code: "us", city: "Nyu-York", country: "AQSh • Cloud Node" },
+          { code: "us", city: "Dallas", country: "AQSh • Cloud Node" },
+          { code: "us", city: "San-Xose", country: "AQSh • Cloud Node" },
+          { code: "ca", city: "Toronto", country: "Kanada • Cloud Node" }
+        ]
+      },
+      samerica: {
+        title: "Janubiy Amerika (South America)",
+        items: [
+          { code: "br", city: "San-Paulu", country: "Braziliya • Cloud Node" },
+          { code: "cl", city: "Santyago", country: "Chili • Cloud Node" }
+        ]
+      }
+    };
+
+    const regionTabs = document.querySelectorAll(".region-tab");
+    const regionTitle = document.getElementById("regionTitle");
+    const locationsGrid = document.getElementById("locationsGrid");
+
+    function renderRegion(key) {
+      const data = regionsData[key];
+      if (!data || !regionTitle || !locationsGrid) return;
+      regionTitle.textContent = data.title;
+      locationsGrid.innerHTML = data.items
+        .map(
+          (loc) => `
+          <div class="loc-card">
+            <div class="loc-head">
+              <span class="fi fi-${loc.code} loc-flag"></span>
+              <span class="loc-title">${loc.city}</span>
+            </div>
+            <div class="loc-sub">${loc.country}</div>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    regionTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        regionTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        renderRegion(tab.getAttribute("data-region"));
+      });
+    });
+
+    renderRegion("europe");
+	  // --- regions script end ---
   </script>
 </body>
 </html>
