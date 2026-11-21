@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="uz-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tariflar va paketlar — Project Progress</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <style>
+    .pricing-hero {
+      padding: 56px 0 26px;
+      text-align: center;
+    }
+
+    .pricing-hero h1 {
+      font-size: clamp(2rem, 3.8vw, 3.1rem);
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .pricing-hero .lead {
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .filter-bar {
+      display: inline-flex;
+      gap: 10px;
+      padding: 6px;
+      border-radius: 14px;
+      background: rgba(9, 16, 33, 0.85);
+      border: 1px solid rgba(34, 211, 238, 0.26);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 9px 18px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: rgba(34, 211, 238, 0.14);
+      border-color: rgba(34, 211, 238, 0.45);
+      color: #ffffff;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .plan-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      box-shadow: 0 12px 36px rgba(34, 211, 238, 0.14);
+    }
+
+    .plan-card.featured {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .plan-title {
+      font-size: 1.24rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .plan-desc {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-bottom: 18px;
+    }
+
+    .price-box {
+      padding: 15px 16px;
+      border-radius: 12px;
+      background: rgba(4, 7, 17, 0.72);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      margin-bottom: 18px;
+    }
+
+    .price-main {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .price-main span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--cyan);
+    }
+
+    .price-note {
+      font-size: 0.82rem;
+      color: var(--emerald);
+      margin-top: 4px;
+    }
+
+    .spec-list {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      margin-bottom: 22px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .spec-list li::before {
+      content: "• ";
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .compare-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+    }
+
+    table.compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 0.93rem;
+    }
+
+    table.compare-table th,
+    table.compare-table td {
+      padding: 15px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    table.compare-table th {
+      color: var(--cyan);
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      background: rgba(4, 7, 17, 0.55);
+    }
+
+    table.compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .highlight-val {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    .hidden-plan {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="images/logo.png" alt="Project Progress logo" />
+        <span>Project Progress</span>
+      </a>
+      <nav aria-label="Asosiy menyu">
+        <a href="/">Bosh sahifa</a>
+        <a href="about.html">Biz haqimizda</a>
+        <a href="services.html">Xizmatlar</a>
+        <a class="active" href="pricing.html">Tariflar</a>
+        <a href="contacts.html">Kontaktlar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="pricing-hero">
+      <div class="container">
+        <div class="tech-pill">
+          <span class="pulse-dot"></span>
+          <span>SO‘MDA SHARTNOMA • PAY AS YOU GO • QULAY IJARALAR</span>
+        </div>
+        <h1>
+          <span class="grad-text">Hisoblash va ma’lumotlar uchun tarif paketlari</span>
+        </h1>
+        <p class="lead">
+          O‘z uskunalaringizni sotib olmasdan kerakli quvvatni ijaraga oling. Hisob-kitob so‘mda,
+          shartnoma asosida — vazifangiz muddati va hajmiga mos holda.
+        </p>
+
+        <div class="filter-bar" role="tablist" aria-label="Tarif yo‘nalishlari">
+          <button class="filter-btn active" data-filter="all" type="button">Barcha paketlar</button>
+          <button class="filter-btn" data-filter="compute" type="button">Hisoblash (VPS)</button>
+          <button class="filter-btn" data-filter="storage" type="button">Katta hajm (S3)</button>
+          <button class="filter-btn" data-filter="bundle" type="button">Hisoblash + S3</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 12px;">
+      <div class="container">
+        <div class="plans-grid">
+
+          <!-- 1. Compute Start -->
+          <article class="plan-card" data-category="compute">
+            <div>
+              <span class="card-code">01 // START NODE</span>
+              <h2 class="plan-title">Compute Start</h2>
+              <p class="plan-desc">Sinov hisoblari, skriptlar va masofaviy ishchi stol (jumladan Windows) uchun qulay tugun.</p>
+              <div class="price-box">
+                <div class="price-main">650 000 so‘m <span>/ oyiga</span></div>
+                <div class="price-note">Qisqa muddatli vazifalarga ham moslashuvchan hisob</div>
+              </div>
+              <ul class="spec-list">
+                <li>2 vCPU / 4 GB RAM / 80 GB SSD</li>
+                <li>3 TB gacha trafik limiti</li>
+                <li>Windows va Linux tizimlarini tanlash imkoniyati</li>
+                <li>Mutaxassislaringiz uchun to‘liq tizim kirishi</li>
+              </ul>
+            </div>
+            <a class="btn btn-secondary" href="contacts.html?plan=Compute%20Start">Buyurtma berish</a>
+          </article>
+
+          <!-- 2. Compute Pro -->
+          <article class="plan-card" data-category="compute">
+            <div>
+              <span class="card-code">02 // COMPUTE PRO</span>
+              <h2 class="plan-title">Compute Pro</h2>
+              <p class="plan-desc">Hisob-kitoblar, tahliliy jarayonlar va dasturiy muhitlar uchun kuchaytirilgan tugun.</p>
+              <div class="price-box">
+                <div class="price-main">1 290 000 so‘m <span>/ oyiga</span></div>
+                <div class="price-note">6 vCPU / 16 GB / 320 GB — 2 550 000 so‘m/oy</div>
+              </div>
+              <ul class="spec-list">
+                <li>4 vCPU / 8 GB RAM / 160 GB SSD (yoki 6/16/320 GB)</li>
+                <li>4–5 TB trafik limiti</li>
+                <li>Windows (masofaviy ish stoli) va Linux qo‘llab-quvvatlovi</li>
+                <li>Vazifa ehtiyojiga qarab muddatni rejalashtirish</li>
+              </ul>
+            </div>
+            <a class="btn btn-secondary" href="contacts.html?plan=Compute%20Pro">Hisob-kitob olish</a>
+          </article>
+
+          <!-- 3. Hybrid Bundle -->
+          <article class="plan-card featured" data-category="bundle">
+            <div>
+              <span class="card-code">03 // BIG DATA BUNDLE</span>
+              <h2 class="plan-title">Data + Compute (5 TB S3 + VPS)</h2>
+              <p class="plan-desc">Katta hajmdagi fayl va datase’tlarni S3 omborda saqlash hamda alohida tugunda hisoblash.</p>
+              <div class="price-box">
+                <div class="price-main">3 850 000 so‘m <span>/ oyiga</span></div>
+                <div class="price-note">Chiquvchi trafik (Egress) — qo‘shimcha to‘lovsiz</div>
+              </div>
+              <ul class="spec-list">
+                <li><strong>5 TB (5 000 GB) S3 ob’yektli ombor</strong> (chiquvchi trafik va API so‘rovlar bepul)</li>
+                <li><strong>Hisoblash serveri:</strong> 6 vCPU / 16 GB RAM / 320 GB SSD</li>
+                <li>Server diskini sun’iy kattalashtirmasdan byudjetni tejash</li>
+                <li>S3 standart vositalari (rclone, AWS CLI, Python SDK, S3 Browser)</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="contacts.html?plan=Data%20%2B%20Compute%205TB">Paketni tanlash</a>
+          </article>
+
+          <!-- 4. S3 Object Storage -->
+          <article class="plan-card" data-category="storage">
+            <div>
+              <span class="card-code">04 // OBJECT STORAGE</span>
+              <h2 class="plan-title">S3 Object Storage</h2>
+              <p class="plan-desc">Zaxira nusxalar, arxivlar, loglar va katta hajmdagi fayllarni ishonchli saqlash ombori.</p>
+              <div class="price-box">
+                <div class="price-main">210 000 so‘m <span>/ 1 TB oyiga</span></div>
+                <div class="price-note">100 GB dan boshlab, 5 TB — ~990 000 so‘m/oy</div>
+              </div>
+              <ul class="spec-list">
+                <li>Faqat band qilingan hajm bo‘yicha hisob-kitob</li>
+                <li>Chiquvchi trafik (Egress) va API so‘rovlar bepul</li>
+                <li>4×9s (99.99%) chidamlilik, versiyalash va Object Lock</li>
+                <li>Mavjud server yoki dasturlarga ulash imkoniyati</li>
+              </ul>
+            </div>
+            <a class="btn btn-secondary" href="contacts.html?plan=S3%20Storage">Hajmni hisoblash</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Moliyaviy mantiq</span>
+          <h2 class="section-title">Nega «Hisoblash + S3» ajratilgan sxema qulay?</h2>
+          <p class="section-sub">
+            Barcha terabayt ma’lumotlarni bitta katta server diskiga yuklash o‘rniga vazifani bo‘lish
+            xarajatlarni nazorat qilishga yordam beradi.
+          </p>
+        </div>
+
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Mezon</th>
+                <th>Project Progress (Hisoblash + S3)</th>
+                <th>Bitta katta server yoki an’anaviy sxema</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>To‘lov tartibi</strong></td>
+                <td class="highlight-val">O‘zbekistonda so‘mda, shartnoma asosida</td>
+                <td>Ko‘pincha xorijiy valyuta va xalqaro hisob-kitob</td>
+              </tr>
+              <tr>
+                <td><strong>Katta hajmdagi ma’lumotlar</strong></td>
+                <td class="highlight-val">S3 omborda arzon narxda saqlanadi, faqat kerakli qismi ishlanadi</td>
+                <td>Katta disk hajmi doimiy yuqori xarajat keltiradi</td>
+              </tr>
+              <tr>
+                <td><strong>Ma’lumotlarni yuklab olish (Egress)</strong></td>
+                <td class="highlight-val">Qo‘shimcha to‘lovsiz chiquvchi trafik</td>
+                <td>Ko‘plab bulutlarda trafik uchun alohida haq olinadi</td>
+              </tr>
+              <tr>
+                <td><strong>Muddat moslashuvchanligi</strong></td>
+                <td class="highlight-val">Qisqa va uzoq muddatli vazifalarga mos</td>
+                <td>Ko‘pincha qat’iy oylik yoki uzoq majburiyatlar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <span class="section-tag">Shaffof hamkorlik</span>
+            <h2 class="section-title" style="margin-bottom: 6px;">Aniq mas’uliyat — kutilmagan shartlarsiz</h2>
+            <p class="section-sub" style="margin-bottom: 0;">
+              Biz kelishilgan muddatga tayyor hisoblash quvvati va/yoki omborni ajratib beramiz.
+              Ma’lumotlarni yuklash, o‘z dasturlaringizni ishga tushirish va natijani olishni mutaxassislaringiz
+              bajaradi (ichki dasturlarni sozlash va ma’muriyatlash xizmati kirmaydi).
+            </p>
+          </div>
+          <a class="btn btn-primary" href="contacts.html">So‘rov yuborish</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <span>© <span id="yr"></span> «Project Progress» MChJ. Barcha huquqlar himoyalangan.</span>
+      <span>projectprogress.uz</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".plan-card");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        cards.forEach((card) => {
+          const cat = card.dataset.category;
+          if (filter === "all" || cat === filter) {
+            card.classList.remove("hidden-plan");
+          } else {
+            card.classList.add("hidden-plan");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
