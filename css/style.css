@@ -741,5 +741,9 @@ footer {
     left: 8%;
     max-width: 295px;
   }
+	.hud-float-top {
+    top: 0;
+    right: -3px;
+  }
 }
 /* End Of Hero Server Rack */
