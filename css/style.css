@@ -691,9 +691,9 @@ footer {
 /* Hero Server Rack */
 .hero-server-img {
   position: absolute;
-  left: -4%;
-  top: 2%;
-  width: 58%;
+  left: -18%;
+  top: 10%;
+  width: 98%;
   max-width: 340px;
   height: auto;
   object-fit: contain;
@@ -705,8 +705,8 @@ footer {
 
 .android-stage .android-img {
   position: relative;
-  left: 19%;
-  max-width: 330px;
+  left: -5%;
+  max-width: 400px;
   z-index: 4;
   mix-blend-mode: normal;
 }
