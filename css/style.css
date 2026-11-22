@@ -699,7 +699,6 @@ footer {
   object-fit: contain;
   z-index: 2;
   pointer-events: none;
-  mix-blend-mode: lighten;
   border-radius: 14px;
   filter: drop-shadow(0 0 28px rgba(34, 211, 238, 0.28));
 }
