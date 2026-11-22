@@ -738,11 +738,11 @@ footer {
   }
 
   .android-stage .android-img {
-    left: 8%;
+    left: 2%;
     max-width: 295px;
   }
 	.hud-float-top {
-    top: -12;
+    top: 0;
     right: -3px;
   }
 }
