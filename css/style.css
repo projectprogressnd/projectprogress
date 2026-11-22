@@ -688,3 +688,58 @@ footer {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.45);
   flex-shrink: 0;
 }
+/* Hero Server Rack */
+.hero-server-img {
+  position: absolute;
+  left: -30%;
+  top: -10%;
+  width: 188%;
+  max-width: 540px;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 24px rgba(34, 211, 238, 0.25));
+}
+
+.android-stage .android-img {
+  position: relative;
+  left: 1%;
+  max-width: 440px;
+  z-index: 3;
+}
+
+.android-stage .hud-float {
+  z-index: 4;
+}
+
+@media (max-width: 940px) {
+  .hero-server-img {
+    left: 2%;
+    top: 15%;
+    width: 38%;
+    max-width: 280px;
+  }
+
+  .android-stage .android-img {
+    left: 0%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-server-img {
+    left: 0%;
+    top: 20%;
+    width: 36%;
+    max-width: 210px;
+  }
+
+  .android-stage .android-img {
+    left: 6%;
+    max-width: 230px;
+  }
+}
+/* End Of Hero Server Rack */
