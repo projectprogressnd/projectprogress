@@ -742,7 +742,7 @@ footer {
     max-width: 295px;
   }
 	.hud-float-top {
-    top: 0;
+    top: -12;
     right: -3px;
   }
 }
